@@ -3,8 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mohamed Fouad — Data Analyst</title>
-  <meta name="description" content="Cairo-based data analyst. Python, SQL, ETL, and reporting that turn messy source data into decisions.">
+  <title>Mohamed Fouad — Data Engineer &amp; Data Analyst</title>
+  <meta name="description" content="Phoenix-based data engineer and analyst. Python, SQL, ETL/ELT pipelines, Spark, and dashboards. Open to remote contract, C2C, and freelance.">
+  <meta name="author" content="Mohamed Fouad">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mohamd764.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2312201c'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='14' font-family='Georgia,serif' fill='%23f4efe4'%3EMF%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="Mohamed Fouad — Data Engineer &amp; Data Analyst">
+  <meta property="og:description" content="Python, SQL, ETL/ELT pipelines, Spark, and dashboards. Based in Phoenix, AZ. Open to remote contract, C2C, and freelance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohamd764.github.io/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/159211588?v=4">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mohamed Fouad — Data Engineer &amp; Data Analyst">
+  <meta name="twitter:description" content="Python, SQL, ETL/ELT pipelines, Spark, and dashboards. Based in Phoenix, AZ. Open to remote contract, C2C, and freelance.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/159211588?v=4">
+  <meta name="theme-color" content="#12201c">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohamed Fouad",
+    "jobTitle": "Data Engineer & Data Analyst",
+    "email": "mailto:mohamedfouad016034@gmail.com",
+    "url": "https://mohamd764.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/159211588?v=4",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Phoenix",
+      "addressRegion": "AZ",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/mohamed-fouad-data",
+      "https://github.com/mohamd764"
+    ],
+    "knowsAbout": ["Python", "SQL", "ETL", "ELT", "Apache Spark", "Dashboards"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,9 +51,9 @@
       --paper: #f4efe4;
       --card: #fffdf8;
       --line: #d9d0bf;
-      --muted: #5d675f;
+      --muted: #3f4a44;
       --copper: #b5692c;
-      --copper-deep: #8a4c1c;
+      --copper-deep: #7a4318;
     }
 
     * { box-sizing: border-box; }
@@ -39,6 +76,20 @@
       z-index: 0;
     }
 
+    .skip {
+      position: absolute;
+      left: 12px;
+      top: 0;
+      transform: translateY(-120%);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 10px 14px;
+      z-index: 2;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .skip:focus { transform: none; }
+
     .wrap {
       position: relative;
       z-index: 1;
@@ -50,6 +101,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 16px;
       padding: 28px 0 8px;
     }
 
@@ -62,7 +114,8 @@
 
     nav {
       display: flex;
-      gap: 22px;
+      flex-wrap: wrap;
+      gap: 8px 22px;
     }
 
     nav a, .btn {
@@ -72,6 +125,7 @@
 
     nav a {
       font-size: 0.95rem;
+      padding: 6px 0;
     }
 
     nav a:hover { color: var(--copper-deep); }
@@ -81,7 +135,7 @@
       grid-template-columns: 160px 1fr;
       gap: 40px;
       align-items: center;
-      padding: 56px 0 36px;
+      padding: 48px 0 28px;
     }
 
     .hero img {
@@ -95,15 +149,21 @@
 
     h1 {
       font-family: Fraunces, Georgia, serif;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      line-height: 1.05;
+      font-size: clamp(2.1rem, 4.6vw, 3.5rem);
+      line-height: 1.08;
       margin: 0 0 12px;
       font-weight: 650;
     }
 
+    .stack {
+      margin: 0 0 10px;
+      font-weight: 600;
+      max-width: 40rem;
+    }
+
     .lede {
-      font-size: 1.15rem;
-      max-width: 38rem;
+      font-size: 1.12rem;
+      max-width: 40rem;
       margin: 0 0 22px;
       color: var(--muted);
     }
@@ -117,6 +177,7 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      min-height: 44px;
       padding: 10px 16px;
       border-radius: 999px;
       border: 1px solid var(--ink);
@@ -128,7 +189,8 @@
       color: var(--paper);
     }
 
-    .btn:hover { transform: translateY(-1px); }
+    .btn:hover { background: #efe8d8; }
+    .btn.primary:hover { background: #24352f; }
 
     section { padding: 28px 0 10px; }
 
@@ -142,9 +204,12 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .skills span {
+    .skills li {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 999px;
@@ -183,21 +248,39 @@
     .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 14px;
+      gap: 6px 12px;
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
     }
 
-    .tags span {
+    .tags li {
       font-size: 0.78rem;
       letter-spacing: 0.03em;
       text-transform: uppercase;
       color: var(--copper-deep);
     }
 
-    article a {
+    article a, .other a {
       color: var(--copper-deep);
       font-weight: 600;
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .other {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .other li {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
     }
 
     footer {
@@ -213,113 +296,130 @@
 
     footer a { color: var(--ink); }
 
+    a:focus-visible, .btn:focus-visible {
+      outline: 3px solid var(--copper);
+      outline-offset: 3px;
+    }
+
     @media (max-width: 760px) {
       .hero, .grid { grid-template-columns: 1fr; }
-      header { align-items: flex-start; flex-direction: column; gap: 14px; }
-      .hero { padding-top: 32px; }
+      header { align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 28px; gap: 20px; }
+      .wrap { width: min(1080px, calc(100% - 28px)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
   <div class="wrap">
     <header>
       <div class="mark">Mohamed Fouad</div>
-      <nav>
+      <nav aria-label="Primary">
         <a href="#work">Work</a>
-        <a href="Mohamed_Fouad_Marketing_Data_Analyst_Portfolio.pdf">Portfolio</a>
         <a href="#about">About</a>
-        <a href="mailto:mohamedfouad890000@gmail.com">Email</a>
+        <a href="mailto:mohamedfouad016034@gmail.com">Email</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <img src="https://avatars.githubusercontent.com/u/159211588?v=4" alt="Mohamed Fouad">
-      <div>
-        <h1>Data analyst who turns raw sources into decisions.</h1>
-        <p class="lede">I build ETL pipelines, SQL models, and reports in Python and Excel. Based in Cairo. Available for analyst and reporting roles.</p>
-        <div class="actions">
-          <a class="btn primary" href="Mohamed_Fouad_Marketing_Data_Analyst_Portfolio.pdf">View portfolio PDF</a>
-          <a class="btn" href="https://www.linkedin.com/in/mohamed-fouad-python/">LinkedIn</a>
-          <a class="btn" href="https://github.com/mohamd764">GitHub</a>
+    <main id="main">
+      <section class="hero">
+        <img src="https://avatars.githubusercontent.com/u/159211588?v=4" width="160" height="160" alt="Mohamed Fouad" decoding="async">
+        <div>
+          <h1>Data Engineer &amp; Data Analyst</h1>
+          <p class="stack">Python, SQL, ETL/ELT pipelines, Spark, and dashboards.</p>
+          <p class="lede">Based in Phoenix, AZ. Open to remote contract, C2C, and freelance work.</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:mohamedfouad016034@gmail.com">Email Mohamed</a>
+            <a class="btn" href="https://www.linkedin.com/in/mohamed-fouad-data" rel="me">LinkedIn</a>
+            <a class="btn" href="https://github.com/mohamd764" rel="me">GitHub</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <div class="skills">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>Excel</span>
-        <span>ETL</span>
-        <span>Power BI</span>
-        <span>Looker Studio</span>
-        <span>Web scraping</span>
-        <span>APIs</span>
-        <span>Git</span>
-      </div>
-    </section>
+      <section aria-label="Skills">
+        <ul class="skills">
+          <li>Python</li>
+          <li>SQL</li>
+          <li>ETL/ELT</li>
+          <li>Spark</li>
+          <li>Dashboards</li>
+          <li>Excel</li>
+          <li>Power BI</li>
+          <li>Looker Studio</li>
+          <li>Web scraping</li>
+          <li>APIs</li>
+          <li>Git</li>
+        </ul>
+      </section>
 
-    <section id="work">
-      <h2>Selected work</h2>
-      <div class="grid">
-        <article>
-          <div class="tags"><span>SQL</span><span>Excel</span><span>Storytelling</span></div>
-          <h3>Marketing data analyst portfolio</h3>
-          <p>A 37-page case pack: e-commerce customer personality analysis in SQL, purchase and campaign KPIs, and a cookie-store operations study with revenue, cost, and profit.</p>
-          <a href="Mohamed_Fouad_Marketing_Data_Analyst_Portfolio.pdf">Open the PDF</a>
-        </article>
-        <article>
-          <div class="tags"><span>ETL</span><span>APIs</span><span>Looker Studio</span></div>
-          <h3>HealthSync Engine</h3>
-          <p>Automated pipeline that pulls Renpho and Trainerize data, fuzzy-matches client names, and feeds a Looker Studio dashboard for coaching programs.</p>
-          <a href="https://github.com/mohamd764/HealthSync-Engine">View repository</a>
-        </article>
-        <article>
-          <div class="tags"><span>SQL</span><span>CRM</span><span>Excel</span></div>
-          <h3>Pipedrive to Excel</h3>
-          <p>SQL connection between Pipedrive CRM and a spreadsheet that records weekly sales activity per person.</p>
-          <a href="https://github.com/mohamd764/-create-an-SQL-connection-between-our-Pipedrive-CRM-and-Excel-Spreadshee">View repository</a>
-        </article>
-        <article>
-          <div class="tags"><span>Python</span><span>Google Drive</span><span>Automation</span></div>
-          <h3>Google Drive Automation</h3>
-          <p>Script to upload or download every file and folder in a Drive directory to or from a local machine.</p>
-          <a href="https://github.com/mohamd764/Google-Drive-Automation">View repository</a>
-        </article>
-        <article>
-          <div class="tags"><span>Machine learning</span><span>Python</span></div>
-          <h3>Diabetes prediction</h3>
-          <p>Model that estimates diabetes risk from health measures such as age, BMI, blood pressure, glucose, and family history.</p>
-          <a href="https://github.com/mohamd764/Diabetes-Prediction-Model">View repository</a>
-        </article>
-        <article>
-          <div class="tags"><span>Clustering</span><span>Python</span></div>
-          <h3>Mall customer segmentation</h3>
-          <p>Unsupervised learning to group shoppers by behaviour and demographics for clearer marketing segments.</p>
-          <a href="https://github.com/mohamd764/Mall-Customer-Segmentation">View repository</a>
-        </article>
-        <article>
-          <div class="tags"><span>Scraping</span><span>JavaScript sites</span></div>
-          <h3>JS-heavy web scraping</h3>
-          <p>Extraction work on sites that render in the browser rather than in static HTML.</p>
-          <a href="https://github.com/mohamd764/web-scraping-of-js-heavy-websites-">View repository</a>
-        </article>
-      </div>
-    </section>
+      <section id="work">
+        <h2>Selected work</h2>
+        <div class="grid">
+          <article>
+            <ul class="tags"><li>ETL</li><li>APIs</li><li>Looker Studio</li></ul>
+            <h3>HealthSync</h3>
+            <p>Trainerize + Renpho coaching analytics pipeline — demo on request. It pulls coaching-program data from both products and feeds a Looker Studio dashboard.</p>
+            <a href="mailto:mohamedfouad016034@gmail.com?subject=HealthSync%20demo%20request">Request a demo</a>
+          </article>
+          <article>
+            <ul class="tags"><li>Python</li><li>Wayback CDX</li><li>Open source</li></ul>
+            <h3>wayback-image-recovery</h3>
+            <p>Open-source tool that recovers lost website images from the Wayback Machine CDX API and Common Crawl. In a real engagement it recovered 37,000+ images from about 118,000 CDX records.</p>
+            <a href="https://github.com/mohamd764/wayback-image-recovery">View repository</a>
+          </article>
+          <article>
+            <ul class="tags"><li>Playwright</li><li>Shadow DOM</li><li>Python</li></ul>
+            <h3>Shadow-DOM booking scraper</h3>
+            <p>Playwright scraper for a JavaScript booking widget that keeps appointment slots inside shadow DOM, exporting date, time, service, and staff to CSV and JSON.</p>
+            <a href="https://github.com/mohamd764/web-scraping-of-js-heavy-websites-">View repository</a>
+          </article>
+          <article>
+            <ul class="tags"><li>Python</li><li>Google Trends</li><li>Correlation</li></ul>
+            <h3>Search interest vs social engagement</h3>
+            <p>Weekly comparison of Google Trends search interest with Twitter engagement (likes, retweets, and quotes), including period splits, scatterplots, and a time-aware regression.</p>
+            <a href="https://github.com/mohamd764/Google-Trends-API">View repository</a>
+          </article>
+          <article>
+            <ul class="tags"><li>JavaScript</li><li>Dashboards</li></ul>
+            <h3>smart-dashboard</h3>
+            <p>Interactive dashboard front end with navigation, charts, tasks, and activity panels. The repository ships with sample UI data so the layout can be reviewed on its own.</p>
+            <a href="https://github.com/mohamd764/smart-dashboard">View repository</a>
+          </article>
+          <article>
+            <ul class="tags"><li>SQL</li><li>KPIs</li><li>Excel</li></ul>
+            <h3>Marketing SQL portfolio</h3>
+            <p>SQL case studies: e-commerce customer personality analysis, purchase and campaign KPIs, and a cookie-store operations study covering revenue, cost, and profit.</p>
+          </article>
+        </div>
+      </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p class="lede">I work as a data analyst and Python developer: extract, clean, join, and present data so a business team can act on it. I care about data quality, clear charts, and handing over work other people can rerun.</p>
-    </section>
+      <section id="other" aria-labelledby="other-heading">
+        <h2 id="other-heading">Other work</h2>
+        <ul class="other">
+          <li><a href="https://github.com/mohamd764/Google-Drive-Automation">Google Drive automation</a> — upload or download every file and folder in a Drive directory.</li>
+          <li><a href="https://github.com/mohamd764/Diabetes-Prediction-Model">Diabetes prediction</a> — model that estimates diabetes risk from health measures such as age, BMI, glucose, and family history.</li>
+          <li><a href="https://github.com/mohamd764/Mall-Customer-Segmentation">Mall customer segmentation</a> — unsupervised grouping of shoppers by behaviour and demographics.</li>
+        </ul>
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <p class="lede">I work as a data engineer and data analyst: Python, SQL, ETL/ELT pipelines, Spark, and dashboards. I extract, clean, join, and present data so a team can rerun the work and act on it. Based in Phoenix, AZ, and open to remote contract, C2C, and freelance engagements.</p>
+      </section>
+    </main>
 
     <footer>
-      <div>Cairo, Egypt</div>
+      <div>Phoenix, AZ</div>
       <div>
-        <a href="mailto:mohamedfouad890000@gmail.com">mohamedfouad890000@gmail.com</a>
+        <a href="mailto:mohamedfouad016034@gmail.com">mohamedfouad016034@gmail.com</a>
         ·
-        <a href="https://www.linkedin.com/in/mohamed-fouad-python/">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/mohamed-fouad-data" rel="me">LinkedIn</a>
         ·
-        <a href="https://github.com/mohamd764">GitHub</a>
+        <a href="https://github.com/mohamd764" rel="me">GitHub</a>
       </div>
     </footer>
   </div>
