@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HealthSync for coaches — weekly client reports from Trainerize + Renpho | Mohamed Fouad</title>
+  <meta name="description" content="HealthSync brings your clients' Renpho weigh-ins and Trainerize workouts and habits onto one weekly coach page, plus a branded progress page for each client. Founding offer for the first 3 coaches.">
+  <meta name="author" content="Mohamed Fouad">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mohamd764.github.io/healthsync.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2312201c'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='14' font-family='Georgia,serif' fill='%23f4efe4'%3EMF%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="HealthSync for coaches — weekly client reports from Trainerize + Renpho">
+  <meta property="og:description" content="Every client's weigh-ins and workouts on one page, every week. Demo on request.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohamd764.github.io/healthsync.html">
+  <meta property="og:image" content="https://mohamd764.github.io/assets/healthsync/og-healthsync.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HealthSync for coaches">
+  <meta name="twitter:description" content="Every client's weigh-ins and workouts on one page, every week. Demo on request.">
+  <meta name="twitter:image" content="https://mohamd764.github.io/assets/healthsync/og-healthsync.jpg">
+  <meta name="theme-color" content="#12201c">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "HealthSync for coaches",
+    "serviceType": "Weekly client progress reporting for online fitness coaches",
+    "description": "Brings Renpho weigh-ins and Trainerize workout and habit completion onto a weekly coach overview and a branded progress page per client.",
+    "url": "https://mohamd764.github.io/healthsync.html",
+    "areaServed": "Worldwide",
+    "provider": {
+      "@type": "Person",
+      "name": "Mohamed Fouad",
+      "url": "https://mohamd764.github.io/",
+      "sameAs": ["https://www.linkedin.com/in/mohamed-fouad-data"]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #12201c;
+      --paper: #f4efe4;
+      --card: #fffdf8;
+      --line: #d9d0bf;
+      --muted: #3f4a44;
+      --copper: #b5692c;
+      --copper-deep: #7a4318;
+      --green: #0f5f52;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(18, 32, 28, 0.04) 0.8px, transparent 0.8px);
+      background-size: 18px 18px;
+      z-index: 0;
+    }
+
+    .skip {
+      position: absolute;
+      left: 12px;
+      top: 0;
+      transform: translateY(-120%);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 10px 14px;
+      z-index: 2;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .skip:focus { transform: none; }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 28px 0 8px;
+    }
+
+    .mark {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+    }
+
+    nav a, .btn { color: var(--ink); text-decoration: none; }
+    nav a { font-size: 0.95rem; padding: 6px 0; }
+    nav a:hover { color: var(--copper-deep); }
+    nav a[aria-current="page"] { color: var(--copper-deep); font-weight: 600; }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--copper-deep);
+      margin: 0 0 12px;
+    }
+
+    .hero { padding: 48px 0 18px; max-width: 46rem; }
+
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(2.1rem, 4.6vw, 3.3rem);
+      line-height: 1.08;
+      margin: 0 0 16px;
+      font-weight: 650;
+    }
+
+    .lede {
+      font-size: 1.12rem;
+      max-width: 42rem;
+      margin: 0 0 22px;
+      color: var(--muted);
+    }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      font-weight: 500;
+    }
+
+    .btn.primary { background: var(--ink); color: var(--paper); }
+    .btn:hover { background: #efe8d8; }
+    .btn.primary:hover { background: #24352f; }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 14px 0 0;
+    }
+
+    section { padding: 28px 0 10px; }
+
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.7rem;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.2rem;
+      margin: 0 0 8px;
+    }
+
+    .shots {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    figure {
+      margin: 0;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    figure .frame {
+      max-height: 620px;
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    figure .frame::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 80px;
+      background: linear-gradient(rgba(255, 253, 248, 0), var(--card));
+    }
+
+    figure img { display: block; width: 100%; height: auto; }
+
+    figcaption {
+      font-size: 0.92rem;
+      color: var(--muted);
+      padding: 10px 4px 2px;
+    }
+
+    figcaption a {
+      color: var(--copper-deep);
+      font-weight: 600;
+      text-underline-offset: 3px;
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 20px 18px;
+    }
+
+    .card p { margin: 0; color: var(--muted); }
+
+    .num {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 2rem;
+      color: var(--green);
+      line-height: 1;
+      margin: 0 0 10px;
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 16px;
+    }
+
+    .list li {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      color: var(--muted);
+    }
+
+    .list strong { color: var(--ink); }
+
+    .fit { color: var(--muted); max-width: 46rem; }
+    .fit ul { margin: 0 0 12px; padding-left: 1.2rem; }
+
+    .prices {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .price {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price.featured { background: var(--green); border-color: var(--green); color: var(--paper); }
+    .price .name { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--copper-deep); margin: 0 0 8px; }
+    .price.featured .name { color: #f2c79b; }
+    .price .amt { font-family: Fraunces, Georgia, serif; font-size: 1.6rem; font-weight: 650; line-height: 1.15; margin: 0 0 10px; }
+    .price p { margin: 0 0 8px; color: var(--muted); font-size: 0.95rem; }
+    .price.featured p { color: #d9eae4; }
+
+    .small { font-size: 0.92rem; color: var(--muted); margin: 14px 0 0; }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 0 0 10px;
+    }
+
+    summary { cursor: pointer; font-weight: 600; }
+    details p, details ul { color: var(--muted); margin: 10px 0 0; }
+    details ul { padding-left: 1.2rem; }
+
+    .cta {
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 22px;
+      padding: 32px 28px;
+      margin-top: 18px;
+    }
+
+    .cta h2 { margin-bottom: 8px; }
+    .cta p { color: #d4dcd8; margin: 0 0 18px; }
+    .cta .btn { border-color: var(--paper); color: var(--paper); }
+    .cta .btn.primary { background: var(--paper); color: var(--ink); }
+    .cta .btn:hover { background: #24352f; }
+    .cta .btn.primary:hover { background: #efe8d8; }
+
+    footer {
+      padding: 48px 0 40px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      margin-top: 36px;
+    }
+
+    footer a { color: var(--ink); }
+
+    a:focus-visible, .btn:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--copper);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .prices { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 760px) {
+      .shots, .grid3, .list, .prices { grid-template-columns: 1fr; }
+      header { align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 28px; }
+      .wrap { width: min(1080px, calc(100% - 28px)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a class="mark" href="/">Mohamed Fouad</a>
+      <nav aria-label="Primary">
+        <a href="/#work">Work</a>
+        <a href="/healthsync.html" aria-current="page">HealthSync for coaches</a>
+        <a href="/#about">About</a>
+        <a href="mailto:mohamedfouad016034@gmail.com">Email</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <p class="eyebrow">HealthSync for coaches</p>
+        <h1>Every client's weigh-ins and workouts on one page, every week.</h1>
+        <p class="lede">HealthSync brings your clients' Renpho weigh-ins and Trainerize workouts and habits together, then gives you a coach overview and a branded progress page for each client. No copy-paste on Monday.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://www.linkedin.com/in/mohamed-fouad-data" rel="me">Book a demo on LinkedIn</a>
+          <a class="btn" href="#pricing">See pricing</a>
+        </div>
+        <p class="note">New service: Mohamed is taking on his first three coaches now.</p>
+      </section>
+
+      <section aria-labelledby="see-heading">
+        <h2 id="see-heading">What you get each week</h2>
+        <div class="shots">
+          <figure>
+            <div class="frame">
+              <img src="assets/healthsync/coach-overview.jpg" width="1280" height="2128" loading="eager" decoding="async" alt="Coach overview for the fictional business Harbour Coaching: six sample clients, three flagged as needing a conversation, with workout and habit bars and a weight trend for each client.">
+            </div>
+            <figcaption>Coach overview: who needs a conversation and why. <a href="assets/healthsync/coach-overview.jpg">View full page</a></figcaption>
+          </figure>
+          <figure>
+            <div class="frame">
+              <img src="assets/healthsync/client-report.jpg" width="1100" height="2333" loading="eager" decoding="async" alt="Progress page for the fictional client Alex Rivera: start, latest and goal weight, a weight chart, a body-fat chart, and weekly workout and habit completion.">
+            </div>
+            <figcaption>A progress page per client, in your brand. <a href="assets/healthsync/client-report.jpg">View full page</a></figcaption>
+          </figure>
+        </div>
+        <p class="small">Screenshots show demo data. Everyone in them, and the business name, is fictional.</p>
+      </section>
+
+      <section aria-labelledby="fit-heading" class="fit">
+        <h2 id="fit-heading">Who it's for</h2>
+        <ul>
+          <li>Online coaching businesses that run clients in <strong>ABC Trainerize (Studio or Enterprise plan)</strong> and have them weigh in on <strong>Renpho</strong> scales.</li>
+          <li>Teams of coaches who review client progress every week and still do it from spreadsheets.</li>
+          <li>Gyms and PT studios running hybrid or transformation programmes with weekly weigh-ins.</li>
+        </ul>
+        <p><strong>Not a fit yet:</strong> Trainerize Pro or Grow plans (Trainerize doesn't offer API access on those), or coaches who don't use Renpho.</p>
+      </section>
+
+      <section aria-labelledby="how-heading">
+        <h2 id="how-heading">How it works</h2>
+        <div class="grid3">
+          <div class="card">
+            <p class="num">1</p>
+            <h3>Connect</h3>
+            <p>On a 20-minute call we confirm your Trainerize plan has API access and your clients are on the Renpho account you already use. Keys go into a private settings file, never into code or email.</p>
+          </div>
+          <div class="card">
+            <p class="num">2</p>
+            <h3>Brand it</h3>
+            <p>Your business name, logo, colours, kg or lb, and which charts show. You decide what counts as "needs attention": days without a weigh-in, and minimum workout and habit completion.</p>
+          </div>
+          <div class="card">
+            <p class="num">3</p>
+            <h3>Every week</h3>
+            <p>The update runs on its own. Open the coach page, message the people who are flagged, and send everyone else their progress page.</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="get-heading">
+        <h2 id="get-heading">What's included</h2>
+        <ul class="list">
+          <li><strong>Coach overview.</strong> Who's on track, who needs a conversation and why: a missed weigh-in, low workouts or habits, or weight moving the wrong way.</li>
+          <li><strong>A progress page per client.</strong> Start, latest and goal weight, progress to goal, and weekly workout and habit completion. Body composition is shown where the scale provides it.</li>
+          <li><strong>Your brand.</strong> Name, logo, colours and units, set once.</li>
+          <li><strong>Plain HTML files.</strong> Open, print or send one. No website, login or app for your clients.</li>
+          <li><strong>A Google Sheet in your account</strong> with the same numbers, ready for Looker Studio if you want a dashboard.</li>
+          <li><strong>Name matching across apps.</strong> "Jon Carter" and "jon.carter" are matched, and anyone who can't be matched is listed, so nobody is silently dropped.</li>
+        </ul>
+      </section>
+
+      <section id="pricing" aria-labelledby="pricing-heading">
+        <h2 id="pricing-heading">Pricing</h2>
+        <div class="prices">
+          <div class="price featured">
+            <p class="name">Founding coach offer</p>
+            <p class="amt">$199 setup<br>+ $59/mo</p>
+            <p>Everything in Managed, up to 50 clients. Price held for 12 months. First 3 coaches only.</p>
+            <p>In return: honest feedback and a short call after 30 days.</p>
+          </div>
+          <div class="price">
+            <p class="name">Managed</p>
+            <p class="amt">$300 setup<br>+ $79/mo</p>
+            <p>Up to 50 clients. Mohamed runs the weekly update, watches for breakages and fixes them, and handles unmatched names.</p>
+            <p>Larger rosters: ask for a quote.</p>
+          </div>
+          <div class="price">
+            <p class="name">Setup only</p>
+            <p class="amt">$550<br>one-time</p>
+            <p>Installed on your own server or scheduled job, with a handover call, a run guide and 30 days of fixes. After that, $30/hr.</p>
+          </div>
+          <div class="price">
+            <p class="name">Gyms &amp; studios</p>
+            <p class="amt">$900 setup<br>+ $199/mo</p>
+            <p>Up to 500 clients, multi-coach views, brand styling, up to 3 hours a month of changes, and a monthly 30-minute review call.</p>
+          </div>
+        </div>
+        <p class="small">Prices in USD. Month-to-month with 30 days' notice to cancel and no cancellation fee. Your Trainerize, Renpho and Google subscriptions are not included.</p>
+      </section>
+
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Questions</h2>
+        <details>
+          <summary>Which Trainerize plan do I need?</summary>
+          <p>Studio or Enterprise. Trainerize only offers API access on those plans. We check this on the first call, before you pay anything.</p>
+        </details>
+        <details>
+          <summary>Does it change anything inside Trainerize?</summary>
+          <p>No. HealthSync reads workout and habit completion from Trainerize and weigh-ins from Renpho. It doesn't edit your clients' programmes. The reports and the sheet are separate files you control.</p>
+        </details>
+        <details>
+          <summary>Is the Renpho connection official?</summary>
+          <p>No. Renpho has no public API, so HealthSync uses community-maintained access, which can change without notice. On the Managed plans, keeping it working is Mohamed's job. We'll talk it through openly on the demo call.</p>
+        </details>
+        <details>
+          <summary>Will it show body fat?</summary>
+          <p>Weight is the core of every report. Body composition is shown where the scale reading includes it, and we confirm what your Renpho account actually returns during setup.</p>
+        </details>
+        <details>
+          <summary>Where does my clients' data go?</summary>
+          <ul>
+            <li>Your Trainerize and Renpho keys stay in a private settings file on the machine that runs the update: your server on Setup only, or a private server Mohamed manages on Managed. They are never put in code, shared documents or email.</li>
+            <li>The Google Sheet lives in your Google account and is shared only with named accounts. No "anyone with the link" sharing.</li>
+            <li>Client pages are marked so search engines don't index them, and they leave out any medication column from your coach sheet.</li>
+            <li>Your client data is never used in marketing. The screenshots on this page are demo data.</li>
+            <li>An NDA is available on request.</li>
+            <li>HealthSync is not HIPAA-certified. If you run a medical or clinical weight-loss practice, let's talk about your requirements before setup.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>What happens if I cancel?</summary>
+          <p>Give 30 days' notice. The sheet and the reports are already yours and stay in your account.</p>
+        </details>
+        <details>
+          <summary>Can I get a refund?</summary>
+          <p>If the Trainerize API turns out not to be available on your plan before the build starts, you get the setup fee back in full. Once the build has started, the setup fee isn't refundable.</p>
+        </details>
+        <details>
+          <summary>Kilograms or pounds?</summary>
+          <p>Either. You choose once in the settings.</p>
+        </details>
+        <details>
+          <summary>Can I see it first?</summary>
+          <p>Yes. Book a 20-minute demo and Mohamed will walk you through the reports on demo data, in your colours if you send your logo.</p>
+        </details>
+      </section>
+
+      <section class="cta" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">Stop copying weigh-ins by hand.</h2>
+        <p>Founding offer for the first 3 coaches: $199 setup + $59/mo, held for 12 months.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://www.linkedin.com/in/mohamed-fouad-data" rel="me">Message Mohamed on LinkedIn</a>
+          <a class="btn" href="mailto:mohamedfouad016034@gmail.com?subject=HealthSync%20demo">Email for a demo</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>Phoenix, AZ</div>
+      <div>
+        <a href="mailto:mohamedfouad016034@gmail.com">mohamedfouad016034@gmail.com</a>
+        ·
+        <a href="https://www.linkedin.com/in/mohamed-fouad-data" rel="me">LinkedIn</a>
+        ·
+        <a href="https://github.com/mohamd764" rel="me">GitHub</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
