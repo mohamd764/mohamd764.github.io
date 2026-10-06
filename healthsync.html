@@ -227,6 +227,15 @@
       text-underline-offset: 3px;
     }
 
+    .demo-player {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background: var(--ink);
+    }
+
     .grid3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -380,6 +389,14 @@
           <a class="btn" href="#pricing">See pricing</a>
         </div>
         <p class="note">New service: Mohamed is taking on his first three coaches now.</p>
+      </section>
+
+      <section id="demo" aria-labelledby="demo-heading">
+        <h2 id="demo-heading">Watch the 1-minute demo</h2>
+        <figure>
+          <video class="demo-player" controls preload="metadata" playsinline src="media/healthsync-demo.mp4" width="1280" height="720"></video>
+          <figcaption>Demo data only. Every client shown is fictional. Narration: AI voice.</figcaption>
+        </figure>
       </section>
 
       <section aria-labelledby="see-heading">
